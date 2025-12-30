@@ -1,0 +1,564 @@
+@import url("../../predileto/css/tokens.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Badge genérico para títulos de seção com linhas acima/abaixo */
+.menu-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-block;
+    padding: 6px 16px;
+    border-top: 1px solid #FFB703;
+    border-bottom: 1px solid #FFB703;
+}
+
+.menu-label h1 {
+    margin: 0;
+    font-size: inherit;
+    line-height: 1.2;
+}
+header {
+    width: 100%;
+    height: 80px;
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 1000;
+}
+header .conteinerHeader{
+    max-width: var(--container);
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+header .logoImg{
+    color: var(--text);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+header .logoImg img{
+    width: 80px;
+    height: 80px;
+
+}
+/* Desktop nav */
+.nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-desktop ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-desktop .btnHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-desktop ul li a,
+.nav-mobile ul li a{
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 16px;
+    font-family: var(--font-sans);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: color 0.3s;
+}
+.nav-desktop ul li a::after,
+.nav-mobile ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+.nav-desktop ul li a:hover,
+.nav-mobile ul li a:hover{
+    color: var(--accent);
+}
+.nav-desktop ul li a:hover::after,
+.nav-mobile ul li a:hover::after {
+    transform-origin: right;
+    transform: scaleX(1);
+}
+.nav-desktop ul li a.active,
+.nav-mobile ul li a.active {
+    color: var(--accent);
+}
+.nav-desktop ul li a.active::after,
+.nav-mobile ul li a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.btnHeader button{
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 16px;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--accent);
+}
+.btnHeader button:hover{
+    color: #111;
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    color: var(--text);
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 18px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 26px;
+}
+
+/* Mobile nav hidden by default on desktop */
+.nav-mobile {
+    display: none;
+}
+
+/* Animação do X quando menu está ativo */
+.menu-toggle.active span:nth-child(1) {
+    top: 18px;
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    top: 18px;
+    transform: rotate(-45deg);
+}
+
+/* Responsive Design */
+
+/* Tablets - 1024px e menores */
+@media (max-width: 1024px) {
+    header .conteinerHeader {
+        padding: 2.5rem 1.5rem;
+    }
+
+    header .logoImg img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .nav-desktop ul {
+        gap: 16px;
+    }
+
+    .nav-desktop ul li a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .btnHeader button {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+}
+
+/* Tablets - 968px e menores */
+@media (max-width: 968px) {
+    header {
+        height: 70px;
+    }
+
+    header .conteinerHeader {
+        padding: 1.5rem;
+        gap: 15px;
+    }
+
+    header .logoImg img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* desktop hidden, mobile visible */
+    .nav-desktop {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-mobile {
+        display: flex;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg);
+        border-top: 1px solid var(--line);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-mobile.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-mobile ul {
+        flex-direction: column;
+        padding: 15px;
+        gap: 8px;
+        width: 100%;
+        list-style: none;
+    }
+
+    .nav-mobile ul li {
+        width: 100%;
+    }
+
+    .nav-mobile ul li a {
+        display: block;
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    /* Botão full-width após o menu no dropdown */
+    .nav-mobile .btnHeader {
+        width: 100%;
+        padding: 0 15px 15px;
+    }
+
+    .nav-mobile .btnHeader button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Celulares Grandes - 768px e menores */
+@media (max-width: 768px) {
+    header {
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    header .conteinerHeader {
+        padding: 1rem;
+        gap: 12px;
+    }
+
+    header .logoImg img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .nav-mobile {
+        top: 65px;
+    }
+
+    .nav-mobile ul li a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+        padding: 6px;
+    }
+
+    .menu-toggle span {
+        width: 22px;
+        height: 2.5px;
+    }
+
+    .menu-toggle span:nth-child(1) {
+        top: 9px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 16px;
+    }
+
+    .menu-toggle span:nth-child(3) {
+        top: 23px;
+    }
+
+    .nav-mobile ul {
+        padding: 12px;
+        gap: 5px;
+    }
+
+    .nav-mobile .btnHeader {
+        padding: 0 12px 12px;
+    }
+
+    .nav-mobile .btnHeader button {
+        padding: 10px;
+    }
+}
+
+/* Celulares - 640px e menores */
+@media (max-width: 640px) {
+    header {
+        height: 60px;
+        padding: 0 12px;
+    }
+
+    header .conteinerHeader {
+        padding: 0.8rem;
+        gap: 10px;
+    }
+
+    header .logoImg img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    header .btnHeader button {
+        font-size: 16px;
+        padding: 9px 12px;
+    }
+
+    .nav-mobile {
+        top: 60px;
+    }
+
+    .nav-mobile ul {
+        padding: 10px;
+        gap: 4px;
+    }
+
+    .nav-mobile ul li a {
+        padding: 9px;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+        padding: 5px;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+        height: 2.5px;
+    }
+
+    .menu-toggle span:nth-child(1) {
+        top: 8px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 15px;
+    }
+
+    .menu-toggle span:nth-child(3) {
+        top: 22px;
+    }
+
+    .nav-mobile .btnHeader {
+        padding: 0 10px 10px;
+    }
+
+    .nav-mobile .btnHeader button {
+        padding: 9px;
+        font-size: 16px;
+    }
+}
+
+/* Celulares Pequenos - 480px e menores */
+@media (max-width: 480px) {
+    header {
+        height: 55px;
+        padding: 0 10px;
+    }
+
+    header .conteinerHeader {
+        padding: 0.6rem;
+        gap: 8px;
+    }
+
+    header .logoImg img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-mobile {
+        top: 55px;
+    }
+
+    .nav-mobile ul {
+        padding: 8px;
+        gap: 2px;
+    }
+
+    .nav-mobile ul li a {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        width: 34px;
+        height: 34px;
+        padding: 4px;
+    }
+
+    .menu-toggle span {
+        width: 18px;
+        height: 2px;
+    }
+
+    .menu-toggle span:nth-child(1) {
+        top: 7px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 14px;
+    }
+
+    .menu-toggle span:nth-child(3) {
+        top: 21px;
+    }
+
+    .nav-mobile .btnHeader {
+        padding: 0 8px 8px;
+    }
+
+    .nav-mobile .btnHeader button {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+/* Ultra Pequenos - 360px */
+@media (max-width: 360px) {
+    header {
+        height: 50px;
+        padding: 0 8px;
+    }
+
+    header .conteinerHeader {
+        padding: 0.5rem;
+        gap: 6px;
+    }
+
+    header .logoImg img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-mobile {
+        top: 50px;
+    }
+
+    .nav-mobile ul {
+        padding: 6px;
+        gap: 2px;
+    }
+
+    .nav-mobile ul li a {
+        padding: 7px;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        width: 32px;
+        height: 32px;
+        padding: 3px;
+    }
+
+    .menu-toggle span {
+        width: 16px;
+        height: 2px;
+    }
+
+    .menu-toggle span:nth-child(1) {
+        top: 6px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 13px;
+    }
+
+    .menu-toggle span:nth-child(3) {
+        top: 20px;
+    }
+
+    .nav-mobile .btnHeader button {
+        padding: 7px;
+        font-size: 16px;
+    }
+}

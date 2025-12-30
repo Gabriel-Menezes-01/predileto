@@ -1,0 +1,113 @@
+/* Phone selector with flag-icons */
+.phone-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: #FF9A00;
+  box-shadow: 0 0 0 3px rgba(255, 154, 0, 0.12);
+}
+
+.phone-flag-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 0;
+  border-right: 1px solid #e6e6e6;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.phone-flag-btn .fi {
+  font-size: 18px;
+}
+
+.phone-dial-code {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.phone-flag-btn .arrow {
+  font-size: 10px;
+  color: #666;
+  transition: transform 0.2s;
+}
+
+.phone-flag-btn:hover {
+  background: #f7f7f7;
+}
+
+.phone-input-wrapper input[type="tel"] {
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+}
+
+.phone-country-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 320px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  z-index: 100;
+  display: none;
+}
+
+.phone-country-menu.open {
+  display: block;
+}
+
+.phone-country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.phone-country-item:hover {
+  background: #f7f7f7;
+}
+
+.phone-country-item .fi {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.phone-country-item .country-name {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.phone-country-item .country-dial {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .phone-country-menu {
+    width: 100%;
+    max-width: 300px;
+  }
+}
