@@ -1,4 +1,4 @@
-@import url("../../predileto/css/tokens.css");
+@import url("./tokens.css");
 
 footer {
     background: #0f0f0f;
@@ -153,6 +153,13 @@ footer {
     gap: 16px;
 }
 
+.footer-social-inline {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .footer-contact-section,
 .footer-hours-section {
     text-align: left;
@@ -173,6 +180,22 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+.footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-list li {
+    margin: 0;
 }
 
 .footer-section-content p {
@@ -300,6 +323,16 @@ footer {
     .footer-hours-section {
         order: 3;
         text-align: center;
+        align-items: center;
+    }
+
+    .footer-hours-section .footer-list {
+        align-items: center;
+    }
+
+    .footer-hours-section .footer-social-inline {
+        justify-content: center;
+        margin-top: 10px;
     }
 
     .footer-logo-img {

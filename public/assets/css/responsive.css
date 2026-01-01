@@ -1,0 +1,590 @@
+/* =========================================================
+   RESPONSIVE MOBILE-FIRST CSS
+   ========================================================= */
+
+:root {
+    --breakpoint-xs: 360px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 640px;
+    --breakpoint-lg: 768px;
+    --breakpoint-xl: 1024px;
+    --breakpoint-xxl: 1440px;
+}
+
+/* =========================================================
+   MOBILE FIRST - BASE STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================================
+   HEADER & NAV RESPONSIVO
+   ========================================================= */
+
+header {
+    padding: 0 !important;
+    height: auto !important;
+}
+
+header .conteinerHeader {
+    padding: 1rem 1rem !important;
+    gap: 12px !important;
+}
+
+header .logoImg img {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+/* Menu toggle - visible on mobile */
+.menu-toggle {
+    display: flex !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1100;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Desktop nav - hidden on mobile */
+.nav-desktop {
+    display: none !important;
+}
+
+/* Mobile nav - visible on mobile */
+.nav-mobile {
+    display: none !important;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg);
+    flex-direction: column;
+    padding: 16px;
+    gap: 8px;
+    border-top: 1px solid var(--line);
+    animation: slideDown 0.3s ease-out;
+    z-index: 999;
+}
+
+.nav-mobile.active {
+    display: flex !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-mobile ul {
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.nav-mobile ul li a {
+    display: block;
+    padding: 10px 12px !important;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.3s;
+}
+
+.nav-mobile ul li a:hover {
+    background-color: rgba(255, 183, 3, 0.1);
+}
+
+/* =========================================================
+   HERO - MOBILE FIRST
+   ========================================================= */
+
+.hero-section {
+    padding: 80px 16px 40px !important;
+    margin-top: 0 !important;
+}
+
+.hero-container {
+    flex-direction: column-reverse !important;
+    gap: 20px !important;
+}
+
+.hero-content h1 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+}
+
+.hero-content p {
+    font-size: 14px !important;
+}
+
+.hero-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+}
+
+.hero-image-wrapper {
+    max-height: 250px !important;
+}
+
+.hero-image-wrapper img {
+    height: 250px !important;
+    border-radius: 8px;
+}
+
+/* =========================================================
+   INFO BAR - MOBILE
+   ========================================================= */
+
+.info-bar {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: calc(100% - 32px) !important;
+    padding: 30px 16px !important;
+    margin-bottom: 30px !important;
+}
+
+.info-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 16px !important;
+    flex-shrink: 0;
+}
+
+.info-item h3 {
+    font-size: 13px !important;
+}
+
+.info-item p {
+    font-size: 12px !important;
+}
+
+/* =========================================================
+   GRIDS - MOBILE FIRST
+   ========================================================= */
+
+.history-grid,
+.dishes-grid,
+.services-cards,
+.testimonials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+}
+
+.dish-card,
+.service-card,
+.testimonial-card {
+    min-width: 0;
+}
+
+.dish-image img,
+.history-image img {
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* =========================================================
+   FORMS - MOBILE FIRST
+   ========================================================= */
+
+.form-row,
+.form-row-multiple {
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.form-input,
+.form-field input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+textarea,
+select {
+    font-size: 16px !important;
+    padding: 12px !important;
+    min-height: 44px !important;
+    width: 100% !important;
+    border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   SECTIONS - MOBILE
+   ========================================================= */
+
+section {
+    padding: 40px 16px !important;
+}
+
+main {
+    margin-top: 70px !important;
+}
+
+/* =========================================================
+   MODAL - MOBILE
+   ========================================================= */
+
+.modal-content {
+    width: 90vw !important;
+    max-width: 400px !important;
+    padding: 20px !important;
+}
+
+.modal-content h2 {
+    font-size: 18px !important;
+}
+
+/* =========================================================
+   TABLET (641px - 768px)
+   ========================================================= */
+
+@media (min-width: 641px) and (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    header .logoImg img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 32px !important;
+    }
+
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .services-cards {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dish-image img,
+    .history-image img {
+        height: 250px !important;
+    }
+
+    section {
+        padding: 50px 24px !important;
+    }
+}
+
+/* =========================================================
+   SMALL DESKTOP (769px - 1024px)
+   ========================================================= */
+
+@media (min-width: 769px) {
+    html {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 0 20px !important;
+    }
+
+    header .conteinerHeader {
+        padding: 1.5rem 12px !important;
+    }
+
+    header .logoImg img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    .nav-mobile {
+        display: none !important;
+    }
+
+    .nav-desktop {
+        display: flex !important;
+    }
+
+    main {
+        margin-top: 80px !important;
+    }
+
+    .hero-section {
+        padding: 100px 40px 60px !important;
+    }
+
+    .hero-container {
+        flex-direction: row !important;
+        gap: 40px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 40px !important;
+    }
+
+    .hero-image-wrapper {
+        max-height: 400px !important;
+    }
+
+    .hero-image-wrapper img {
+        height: 400px !important;
+    }
+
+    .info-bar {
+        grid-template-columns: repeat(3, 1fr) !important;
+        padding: 50px 0 !important;
+        margin-bottom: 60px !important;
+    }
+
+    .info-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+    }
+
+    .history-grid {
+        grid-template-columns: 1.2fr 1fr !important;
+        gap: 40px !important;
+    }
+
+    .history-image img,
+    .dish-image img {
+        height: 350px !important;
+    }
+
+    .dishes-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 28px !important;
+    }
+
+    .services-cards {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 24px !important;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 28px !important;
+    }
+
+    section {
+        padding: 80px 40px !important;
+    }
+
+    .form-row-multiple {
+        flex-direction: row !important;
+    }
+
+    .form-input,
+    input {
+        padding: 14px !important;
+        min-height: 48px !important;
+    }
+}
+
+/* =========================================================
+   LARGE DESKTOP (1025px+)
+   ========================================================= */
+
+@media (min-width: 1025px) {
+    .hero-content h1 {
+        font-size: 48px !important;
+    }
+
+    .info-bar {
+        margin-bottom: 80px !important;
+    }
+
+    .dish-image img {
+        height: 300px !important;
+    }
+
+    section {
+        padding: 100px 60px !important;
+    }
+}
+
+/* =========================================================
+   TIPOGRAFIA RESPONSIVA
+   ========================================================= */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px !important;
+    }
+
+    h2 {
+        font-size: 18px !important;
+    }
+
+    h3 {
+        font-size: 16px !important;
+    }
+
+    p {
+        font-size: 14px !important;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 28px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+}
+
+@media (min-width: 769px) {
+    h1 {
+        font-size: 40px !important;
+    }
+
+    h2 {
+        font-size: 32px !important;
+    }
+
+    h3 {
+        font-size: 24px !important;
+    }
+}
+
+/* =========================================================
+   TOUCH-FRIENDLY
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+    button,
+    a.btn,
+    .btnHeader button,
+    input[type="button"],
+    input[type="submit"] {
+        min-height: 48px !important;
+        min-width: 48px !important;
+        padding: 14px 24px !important;
+    }
+
+    .form-input {
+        min-height: 48px !important;
+    }
+
+    a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/* =========================================================
+   SAFE AREA - NOTCHES
+   ========================================================= */
+
+@supports (padding: max(0px)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    header {
+        padding-left: max(1rem, env(safe-area-inset-left)) !important;
+        padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    }
+
+    footer {
+        padding-left: max(1rem, env(safe-area-inset-left)) !important;
+        padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    }
+}
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+
+.container {
+    width: min(var(--container), 100% - 32px);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 769px) {
+    .container {
+        width: min(var(--container), 100% - 80px);
+        padding: 0 40px;
+    }
+}
+
+/* Hide scrollbars on mobile for cleaner look */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
+}

@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="pt-BR">
+<?php
+$assetBase = '../assets';
+$rootPath  = '..';
+?>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../css/sobreNos.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/sobreNos.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <title>Predileto - Sobre Nós</title>
 </head>
 <body>
   
-        <?php include "../../predileto/components/header.php" ?>
+        <?php include __DIR__ . "/../components/header.php" ?>
   
 
   <main class="sobre-main">
@@ -25,7 +33,7 @@
         <div class="sobre-hero-media">
           <div class="decor-circle"></div>
           <div class="hero-image-wrap">
-            <img src="../images/gallery/predileto.jpg" alt="Ambiente do restaurante Predileto com iluminação aconchegante">
+            <img src="<?= $assetBase ?>/images/gallery/predileto.jpg" alt="Ambiente do restaurante Predileto com iluminação aconchegante">
           </div>
         </div>
       </div>
@@ -63,33 +71,39 @@
 
     <!-- Galeria -->
     <section class="sobre-galeria" id="galeria">
-      <div class="galeria-header">
-        <span class="section-badge">GALERIA</span>
-        <h2>O que produzimos</h2>
-      </div>
-      <div class="galeria-grid">
+      <div class="galeria-grid lightbox-gallery">
+        <div class="galeria-item">
+          <img src="<?= $assetBase ?>/images/gallery/predileto2.jpg" alt="Interior do restaurante Predileto" data-full="<?= $assetBase ?>/images/gallery/predileto2.jpg">
+        </div>
+        <div class="galeria-item">
+          <img src="<?= $assetBase ?>/images/gallery/predileto.jpg" alt="Ambiente do restaurante" data-full="<?= $assetBase ?>/images/gallery/predileto.jpg">
+        </div>
+        <div class="galeria-item">
+          <img src="<?= $assetBase ?>/images/gallery/salmao.jpg" alt="Prato de salmão fresco" data-full="<?= $assetBase ?>/images/gallery/salmao.jpg">
+        </div>
+        <div class="galeria-item">
+          <img src="<?= $assetBase ?>/images/gallery/arrozdepato.jpg" alt="Prato arroz de pato" data-full="<?= $assetBase ?>/images/gallery/arrozdepato.jpg">
+        </div>
+        <div class="galeria-item">
+          <img src="<?= $assetBase ?>/images/gallery/picanha.jpg" alt="Picanha grelhada" data-full="<?= $assetBase ?>/images/gallery/picanha.jpg">
+        </div>
         <div class="galeria-item destaque">
-          <img src="../images/gallery/predileto2.jpg" alt="Interior do restaurante Predileto">
+          <img src="<?= $assetBase ?>/images/gallery/estrogonofedeFrango.jpg" alt="Estrogonofe de frango" data-full="<?= $assetBase ?>/images/gallery/estrogonofedeFrango.jpg">
         </div>
         <div class="galeria-item">
-          <img src="../images/gallery/predileto.jpg" alt="Pancakes empilhadas">
+          <img src="<?= $assetBase ?>/images/gallery/MassaDeCamarao.jpg" alt="Massa de camarão" data-full="<?= $assetBase ?>/images/gallery/MassaDeCamarao.jpg">
         </div>
         <div class="galeria-item">
-          <img src="../images/gallery/salmao.jpg" alt="Prato de salmão fresco">
-        </div>
-        <div class="galeria-item">
-          <img src="../images/gallery/arrozdepato.jpg" alt="Chef preparando prato">
-        </div>
-        <div class="galeria-item">
-          <img src="../images/gallery/picanha.jpg" alt="Drink e entrada">
+          <img src="<?= $assetBase ?>/images/gallery/MassaDeCarne.jpg" alt="Massa de carne" data-full="<?= $assetBase ?>/images/gallery/MassaDeCarne.jpg">
         </div>
       </div>
     </section>
   </main>
 
-  <?php include "../components/footer.php" ?>
+  <?php include __DIR__ . "/../components/footer.php" ?>
 
-  <script defer src="../js/header.js"></script>
-  <script defer src="../js/footer.js"></script>
+  <script defer src="<?= $assetBase ?>/js/galeria-lightbox.js"></script>
+  <script defer src="<?= $assetBase ?>/js/header.js"></script>
+  <script defer src="<?= $assetBase ?>/js/footer.js"></script>
 </body>
 </html>

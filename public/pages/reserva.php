@@ -1,19 +1,24 @@
 <!doctype html>
 <html lang="pt-BR">
+<?php
+$assetBase = '../assets';
+$rootPath  = '..';
+?>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
-  <link rel="stylesheet" href="../css/phone.css">
-  <link rel="stylesheet" href="../css/alerts.css">
-  <link rel="stylesheet" href="../css/reserva.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/phone.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/reserva.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
+  <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <title>Reserva - Predileto</title>
 </head>
 <body>
-  <?php include "../components/header.php" ?>
+  <?php include __DIR__ . "/../components/header.php" ?>
 
   <main class="mainReserva">
     <section class="reserva-hero">
@@ -26,7 +31,7 @@
       <div class="reserva-content">
         <!-- Imagem à esquerda -->
         <div class="reserva-image">
-          <img src="../images/gallery/reserved.jpg" alt="Mesa reservada com ambiente acolhedor" />
+          <img src="<?= $assetBase ?>/images/gallery/reserved.jpg" alt="Mesa reservada com ambiente acolhedor" />
         </div>
 
         <!-- Formulário à direita -->
@@ -125,14 +130,15 @@
       </div>
       <h2>Sua reserva está confirmada!</h2>
       <p>Obrigado por nos escolher e esperamos recebê-lo em breve.</p>
-      <a href="../index.php" class="modal-btn">Volta o Início</a>
+      <a href="<?= $rootPath ?>/index.php" class="modal-btn">Volta o Início</a>
     </div>
   </div>
 
-  <?php include "../components/footer.php" ?>
+  <?php include __DIR__ . "/../components/footer.php" ?>
 
-  <script src="../js/alerts.js"></script>
-  <script src="../js/phone-country.js"></script>
-  <script src="../js/reservation.js"></script>
+  <script src="<?= $assetBase ?>/js/alerts.js"></script>
+  <script src="<?= $assetBase ?>/js/phone-country.js"></script>
+  <script src="<?= $assetBase ?>/js/reservation.js"></script>
+  <script src="<?= $assetBase ?>/js/header.js"></script>
 </body>
 </html>

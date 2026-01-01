@@ -7,7 +7,7 @@ const pratos = {
       preco: 45.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../../predileto/images/dishes/carne1.jpg",
+      imagem: "../images/dishes/carne1.jpg",
       descricao: "Suculenta picanha grelhada na brasa"
     },
     {
@@ -16,7 +16,7 @@ const pratos = {
       preco: 48.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../../predileto/images/dishes/carne2.jpg",
+      imagem: "../images/dishes/carne2.jpg",
       descricao: "Costela macia ao molho barbecue"
     },
     {
@@ -25,7 +25,7 @@ const pratos = {
       preco: 38.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../../predileto/images/dishes/carne3.jpg",
+      imagem: "../images/dishes/carne3.jpg",
       descricao: "Espetim grelhado com tempero especial"
     },
     {
@@ -34,7 +34,7 @@ const pratos = {
       preco: 52.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../../predileto/images/dishes/carne4.jpg",
+      imagem: "../images/dishes/carne4.jpg",
       descricao: "Bife ancho maturado e grelhado"
     },
     {
@@ -43,7 +43,7 @@ const pratos = {
       preco: 42.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../../predileto/images/dishes/carne5.jpg",
+      imagem: "../images/dishes/carne5.jpg",
       descricao: "Alcatra suculenta grelhada"
     },
     {
@@ -52,7 +52,7 @@ const pratos = {
       preco: 35.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../../predileto/images/dishes/carne6.jpg",
+      imagem: "../images/dishes/carne6.jpg",
       descricao: "Carne seca grelhada com manteiga de alho"
     }
   ],
@@ -63,7 +63,7 @@ const pratos = {
       preco: 28.00,
       rating: 5,
       categoria: "frango",
-      imagem: "../../predileto/images/dishes/frango1.jpg",
+      imagem: "../images/dishes/frango1.jpg",
       descricao: "Frango grelhado macio e temperado"
     },
     {
@@ -72,7 +72,7 @@ const pratos = {
       preco: 25.00,
       rating: 5,
       categoria: "frango",
-      imagem: "../../predileto/images/dishes/frango2.jpg",
+      imagem: "../images/dishes/frango2.jpg",
       descricao: "Asas crocantes ao molho barbecue"
     },
     {
@@ -81,7 +81,7 @@ const pratos = {
       preco: 32.00,
       rating: 5,
       categoria: "frango",
-      imagem: "../../predileto/images/dishes/frango3.jpg",
+      imagem: "../images/dishes/frango3.jpg",
       descricao: "Peito recheado com queijo e bacon"
     },
     {
@@ -90,7 +90,7 @@ const pratos = {
       preco: 30.00,
       rating: 5,
       categoria: "frango",
-      imagem: "../../predileto/images/dishes/frango4.jpg",
+      imagem: "../images/dishes/frango4.jpg",
       descricao: "Frango grelhado com molho de limão"
     },
     {
@@ -99,7 +99,7 @@ const pratos = {
       preco: 22.00,
       rating: 5,
       categoria: "frango",
-      imagem: "../../predileto/images/dishes/frango5.jpg",
+      imagem: "../images/dishes/frango5.jpg",
       descricao: "Coxa e sobrecoxa suculentas"
     },
     {
@@ -108,7 +108,7 @@ const pratos = {
       preco: 35.00,
       rating: 5,
       categoria: "frango",
-      imagem: "../../predileto/images/dishes/frango6.jpg",
+      imagem: "../images/dishes/frango6.jpg",
       descricao: "Frango à milanesa com queijo derretido"
     }
   ],
@@ -119,7 +119,7 @@ const pratos = {
       preco: 55.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../../predileto/images/dishes/peixe1.jpg",
+      imagem: "../images/dishes/peixe1.jpg",
       descricao: "Salmão fresco grelhado na brasa"
     },
     {
@@ -128,7 +128,7 @@ const pratos = {
       preco: 32.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../../predileto/images/dishes/peixe2.jpg",
+      imagem: "../images/dishes/peixe2.jpg",
       descricao: "Filé de tilápia crocante"
     },
     {
@@ -137,7 +137,7 @@ const pratos = {
       preco: 48.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../../predileto/images/dishes/peixe3.jpg",
+      imagem: "../images/dishes/peixe3.jpg",
       descricao: "Polvo macio com batata-doce"
     },
     {
@@ -146,7 +146,7 @@ const pratos = {
       preco: 38.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../../predileto/images/dishes/peixe4.jpg",
+      imagem: "../images/dishes/peixe4.jpg",
       descricao: "Moqueca baiana tradicional"
     },
     {
@@ -155,7 +155,7 @@ const pratos = {
       preco: 52.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../../predileto/images/dishes/peixe5.jpg",
+      imagem: "../images/dishes/peixe5.jpg",
       descricao: "Robalo fresco ao sal"
     },
     {
@@ -164,7 +164,7 @@ const pratos = {
       preco: 45.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../../predileto/images/dishes/peixe6.jpg",
+      imagem: "../images/dishes/peixe6.jpg",
       descricao: "Camarão fresco na manteiga de alho"
     }
   ]

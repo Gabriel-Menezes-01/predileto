@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<?php
+$assetBase = '../assets';
+$rootPath  = '..';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/alerts.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
-    <link rel="stylesheet" href="../css/phone.css">
-    <link rel="stylesheet" href="../../predileto/css/contato.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/phone.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/contato.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Contato - Predileto</title>
 </head>
 <body>
 
-        <?php include "../../predileto/components/header.php" ?>
+        <?php include __DIR__ . "/../components/header.php" ?>
     
 
     <main>
@@ -80,10 +87,11 @@
         </section>
     </main>
 
-    <?php include "../components/footer.php" ?>
+    <?php include __DIR__ . "/../components/footer.php" ?>
 
-    <script src="../js/alerts.js"></script>
-    <script src="../js/phone-country.js"></script>
-    <script src="../../predileto/js/contato.js"></script>
+    <script src="<?= $assetBase ?>/js/alerts.js"></script>
+    <script src="<?= $assetBase ?>/js/phone-country.js"></script>
+    <script src="<?= $assetBase ?>/js/contato.js"></script>
+    <script src="<?= $assetBase ?>/js/header.js"></script>
 </body>
 </html>
