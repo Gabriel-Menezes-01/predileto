@@ -32,27 +32,69 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Salvar em arquivo
     file_put_contents($logFile, $mensagemLog, FILE_APPEND);
     
-    // Preparar email
-    $para = 'gabrielme2000.gm@gmail.com';
-    $assuntoEmail = 'Mensagem de Contato - ' . $assunto;
-    $mensagemEmail = "NOVA MENSAGEM DE CONTATO\n\n";
-    $mensagemEmail .= "Nome: " . $nome . "\n";
-    $mensagemEmail .= "Email: " . $email . "\n";
-    $mensagemEmail .= "Telefone: " . $telefone . "\n";
-    $mensagemEmail .= "Assunto: " . $assunto . "\n\n";
-    $mensagemEmail .= "Mensagem:\n" . $mensagem;
+    // Preparar email usando Formspree
+    $formspreeEndpoint = 'https://formspree.io/f/xlgdjead';
     
-    $headers = "From: noreply@predileto.com\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $mensagemCompleta = "📧 NOVA MENSAGEM DE CONTATO\n\n";
+    $mensagemCompleta .= "👤 Nome: $nome\n";
+    $mensagemCompleta .= "📧 Email: $email\n";
+    $mensagemCompleta .= "📱 Telefone: $telefone\n";
+    $mensagemCompleta .= "📋 Assunto: $assunto\n\n";
+    $mensagemCompleta .= "💬 Mensagem:\n$mensagem\n\n";
+    $mensagemCompleta .= "Responda este cliente pelo email: $email";
     
-    // Enviar email (pode falhar no WAMP local, mas dados estão salvos)
-    @mail($para, $assuntoEmail, $mensagemEmail, $headers);
+    $emailEnviado = false;
+    
+    $postData = [
+        'name' => $nome,
+        'email' => $email,
+        'telefone' => $telefone,
+        'assunto' => $assunto,
+        'message' => $mensagemCompleta,
+        '_replyto' => $email,
+        '_subject' => 'Contato: ' . $assunto . ' - ' . $nome
+    ];
+    
+    // Tentar com cURL (método mais confiável)
+    if (function_exists('curl_init')) {
+        $ch = curl_init($formspreeEndpoint);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/x-www-form-urlencoded',
+            'Accept: application/json'
+        ]);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        
+        $emailEnviado = ($httpCode >= 200 && $httpCode < 300);
+    }
+    
+    // Se cURL não estiver disponível, tentar com file_get_contents
+    if (!$emailEnviado) {
+        $context = stream_context_create([
+            'http' => [
+                'method'  => 'POST',
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\nAccept: application/json\r\n",
+                'content' => http_build_query($postData),
+                'timeout' => 10
+            ]
+        ]);
+        
+        $response = @file_get_contents($formspreeEndpoint, false, $context);
+        $emailEnviado = ($response !== false);
+    }
     
     // Sempre retornar sucesso pois os dados foram salvos
     echo json_encode([
-        'success' => true, 
-        'message' => 'Mensagem registrada com sucesso! (Dados salvos em mensagens.txt)'
+        'success' => true,
+        'emailSent' => $emailEnviado,
+        'message' => 'Mensagem enviada com sucesso!',
+        'info' => $emailEnviado ? 'Email enviado!' : 'Mensagem salva em mensagens.txt'
     ]);
 } else {
     echo json_encode(['success' => false, 'message' => 'Método não permitido.']);

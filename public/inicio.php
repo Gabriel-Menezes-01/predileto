@@ -20,7 +20,7 @@ $rootPath  = $rootPath  ?? '.';
 </head>
 <body>
     <?php include __DIR__ . "/components/header.php" ?>
-    
+
 <main class="mainInicio">
     <section class="hero-section">
         <div class="hero-container">
@@ -30,7 +30,7 @@ $rootPath  = $rootPath  ?? '.';
                     <span class="highlight">Predileto</span>
                 </h1>
                 <p class="hero-subtitle">Uma experiência gastronômica inesquecível</p>
-                <a href="#menu" class="hero-btn">View Menu</a>
+                <a href="./pages/cardapio.php" class="hero-btn">Ver Menu</a>
             </div>
             <div class="hero-image">
                 <div class="hero-image-wrapper">
@@ -42,27 +42,27 @@ $rootPath  = $rootPath  ?? '.';
         </div>
     </section>
     <section class="info-bar" id="contato">
-        <div class="info-item">
+        <a href="https://maps.google.com/?q=Praceta+vale+paraíso,+2765-053+Estoril" target="_blank" class="info-item info-location">
             <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
             <div>
                 <h3>Localização</h3>
-                <p>R. xxxxxxxx, 123 - Cacais</p>
+                <p>R.Praceta vale paraíso, 2765-053 Estoril </p>
             </div>
-        </div>
+        </a>
         <div class="info-item">
             <div class="info-icon"><i class="bi bi-clock"></i></div>
             <div>
                 <h3>Aberto</h3>
-                <p>Domingo a Sábado: 12h às 23h30<br>segunda: fechado</p>
+                <p>Domingo a Segunda: 12h às 23h30</p>
             </div>
         </div>
-        <div class="info-item">
+        <a href="https://wa.me/351926233942?text=Olá%20Predileto%2C%20gostaria%20de%20fazer%20uma%20reserva!" target="_blank" class="info-item info-reservation">
             <div class="info-icon"><i class="bi bi-envelope"></i></div>
             <div>
                 <h3>Reserva</h3>
-                <p>hirestaurantate@gmail.com</p>
+                <p>+351 926 233 942</p>
             </div>
-        </div>
+        </a>
     </section>
 
     <section class="history-section" id="sobre">
@@ -187,7 +187,7 @@ $rootPath  = $rootPath  ?? '.';
         </div>
 
         <div class="section-action">
-            <a href="#" class="view-all-btn">Veja todos os pratos</a>
+            <a href="./pages/todos-os-pratos.php" class="view-all-btn">Veja todos os pratos</a>
         </div>
     </section>
 
@@ -199,43 +199,8 @@ $rootPath  = $rootPath  ?? '.';
                 <p class="testimonials-description">Adoramos receber notícias dos nossos clientes, por isso, deixe um comentário ou envie-nos um e-mail.</p>
             </div>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-header-card">
-                        <img src="<?= $assetBase ?>/images/gallery/cliente1.jpg" alt="Foto de Daniyel Spyra" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <h3 class="testimonial-name">Daniyel Spyra</h3>
-                            <p class="testimonial-location">Newyork</p>
-                        </div>
-                    </div>
-                    <hr class="testimonial-divider">
-                    <p class="testimonial-text">"It is professional, considers everyone's time, can think about the 'There are many variations of passages whole probls small niche, friendly."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header-card">
-                        <img src="<?= $assetBase ?>/images/gallery/cliente2.jpg" alt="Foto de Natasha D" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <h3 class="testimonial-name">Natasha D</h3>
-                            <p class="testimonial-location">Salt Lake City</p>
-                        </div>
-                    </div>
-                    <hr class="testimonial-divider">
-                    <p class="testimonial-text">"It is professional, considers everyone's time, can think about the 'There are many variations of passages whole probls small niche, friendly."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header-card">
-                        <img src="<?= $assetBase ?>/images/gallery/cliente3.jpg" alt="Foto de Jack Sparrow" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <h3 class="testimonial-name">Jack Sparrow</h3>
-                            <p class="testimonial-location">San Diego</p>
-                        </div>
-                    </div>
-                    <hr class="testimonial-divider">
-                    <p class="testimonial-text">"It is professional, considers everyone's time, can think about the 'There are many variations of passages whole probls small niche, friendly."</p>
-                </div>
-            </div>
+            <!-- Elfsight Google Reviews Widget -->
+            <div class="elfsight-app-8bbc82e6-0f53-4081-b503-5c1445fdac4d" data-elfsight-app-lazy></div>
         </div>
     </section>
 
@@ -246,7 +211,7 @@ $rootPath  = $rootPath  ?? '.';
                 <span class="reservation-label">RESERVA</span>
                 <h2 class="reservation-title">Reserve já a sua mesa!</h2>
                 
-                <form class="reservation-form" id="reservationForm">
+                <form class="reservation-form" id="reservationForm" action="https://formspree.io/f/xlgdjead" method="POST">
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Name" required class="form-input form-input-full">
                     </div>
@@ -290,9 +255,13 @@ $rootPath  = $rootPath  ?? '.';
 
 <?php include __DIR__ . "/components/footer.php" ?>
 
+        <!-- Elfsight Google Reviews Platform -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+
         <script defer src="<?= $assetBase ?>/js/alerts.js"></script>
         <script defer src="<?= $assetBase ?>/js/phone-country.js"></script>
         <script defer src="<?= $assetBase ?>/js/header.js"></script>
+        <script defer src="<?= $assetBase ?>/js/hero.js"></script>
         <script defer src="<?= $assetBase ?>/js/reservation.js"></script>
         <script defer src="<?= $assetBase ?>/js/footer.js"></script>
 </body>

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!reservationForm) return;
 
-  const redirectUrl = window.location.pathname.includes('/pages/') ? '../index.php' : 'index.php';
+  const redirectUrl = window.location.pathname.includes('/pages/') ? '../inicio.php' : 'inicio.php';
 
   const showError = (message) => {
     if (typeof window.showAppModal === 'function') {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Função para mostrar modal de confirmação
   function showConfirmationModal() {
     const modal = document.getElementById('confirmationModal');
-    const redirectUrl = window.location.pathname.includes('/pages/') ? '../index.php' : 'index.php';
+    const redirectUrl = window.location.pathname.includes('/pages/') ? '../inicio.php' : 'inicio.php';
     if (modal) {
       modal.classList.add('show');
       setTimeout(() => {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalBtn) {
     modalBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const redirectUrl = window.location.pathname.includes('/pages/') ? '../index.php' : 'index.php';
+      const redirectUrl = window.location.pathname.includes('/pages/') ? '../inicio.php' : 'inicio.php';
       window.location.href = redirectUrl;
     });
   }
@@ -163,8 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
             redirectUrl,
             autoCloseMs: 3000
           });
+          
+          // Redirecionar após 3 segundos
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, 3000);
         } else {
           showConfirmationModal();
+          
+          // Redirecionar após 3 segundos
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, 3000);
         }
       } else {
         showError(result.message || 'Erro ao enviar reserva.');

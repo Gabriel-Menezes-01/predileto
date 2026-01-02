@@ -42,7 +42,7 @@ $rootPath  = '..';
             As pessoas, a comida e a localização prioriegiada fazem do Predileto o lugar perfeito para bons amigos e família se reunirem e se divertirem.
           </p>
 
-          <form id="reservationForm" class="reserva-form">
+          <form id="reservationForm" class="reserva-form" action="https://formspree.io/f/xlgdjead" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <input 

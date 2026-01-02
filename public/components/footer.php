@@ -9,13 +9,13 @@ $assetBase = $assetBase ?? '../assets';
         <div class="footer-section footer-contact-section">
             <h4 class="footer-section-title">CONTATO</h4>
             <ul class="footer-list">
-                <li>5 Rue Dolou, 75015 Cacis</li>
+                <li> R.Praceta vale paraíso, 2765-053 Estoril</li>
                 <li class="contact-item">
-                    <span class="contact-label">Call •</span>
-                    <a href="tel:+351999999999">+351 999 999 999</a>
+                    <span class="contact-label">Telefone </span>
+                    <a href="tel:+351926233942">+351 926 233 942</a>
                 </li>
                 <li>
-                    <a href="mailto:predileto@mail.com">predileto@mail.com</a>
+                    <a href="mailto:Prediletonegri@gmail.com">Prediletonegri@gmail.com</a>
                 </li>
             </ul>
         </div>
@@ -41,12 +41,10 @@ $assetBase = $assetBase ?? '../assets';
                 <h4 class="footer-section-title">HORAS DE TRABALHO</h4>
             </div>
             <ul class="footer-list">
-                <li>Terça - Sexta: <span class="hours-highlight">7:00am - 10:00pm</span></li>
-                <li>Sábado: <span class="hours-highlight">7:00am - 6:00pm</span></li>
-                <li>Domingo: <span class="hours-highlight">8:00am - 6:00pm</span></li>
+                <li>Segunda - Domingo: <span class="hours-highlight">8:00am - 22:00pm</span></li>
             </ul>
             <div class="footer-social footer-social-inline">
-                <a href="#" class="social-icon" aria-label="Instagram" target="_blank">
+                <a href="https://www.instagram.com/predileto_negri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" aria-label="Instagram" target="_blank">
                     <i class="bi bi-instagram"></i>
                 </a>
                 <a href="#" class="social-icon" aria-label="Facebook" target="_blank">
