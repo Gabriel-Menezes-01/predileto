@@ -1,6 +1,8 @@
 <?php
-// Usa variáveis fornecidas pela página para manter caminhos relativos consistentes
-$assetBase = $assetBase ?? '../assets';
+// Carrega configurações centralizadas se não estiverem já definidas
+if (!isset($assetBase)) {
+    require __DIR__ . '/../../config.php';
+}
 ?>
 
 <footer class="footer">
@@ -20,30 +22,12 @@ $assetBase = $assetBase ?? '../assets';
             </ul>
         </div>
 
-        <!-- Centro: Logo + Newsletter -->
+        <!-- Centro: Logo + Redes Sociais -->
         <div class="footer-center">
             <div class="footer-logo-wrap">
                 <img src="<?= $assetBase ?>/images/logo/LogoPredileto.svg" alt="Logo Predileto" class="footer-logo-img">
             </div>
-            <div class="footer-section footer-newsletter-section">
-                <h3 class="newsletter-title">Junte-se à nossa lista de e-mails para<br>atualizações,</h3>
-                <p class="newsletter-subtitle">Receba novidades e ofertas de eventos.</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" name="email" placeholder="Email" required class="newsletter-input">
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Horas + Social -->
-        <div class="footer-section footer-hours-section">
-            <div class="footer-hours-header">
-                <h4 class="footer-section-title">HORAS DE TRABALHO</h4>
-            </div>
-            <ul class="footer-list">
-                <li>Segunda - Domingo: <span class="hours-highlight">8:00am - 22:00pm</span></li>
-            </ul>
-            <div class="footer-social footer-social-inline">
+            <div class="footer-social footer-social-center">
                 <a href="https://www.instagram.com/predileto_negri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" aria-label="Instagram" target="_blank">
                     <i class="bi bi-instagram"></i>
                 </a>
@@ -52,6 +36,16 @@ $assetBase = $assetBase ?? '../assets';
                 </a>
             </div>
         </div>
+
+        <!-- Horas de Trabalho -->
+        <div class="footer-section footer-hours-section">
+            <div class="footer-hours-header">
+                <h4 class="footer-section-title">HORAS DE TRABALHO</h4>
+            </div>
+            <ul class="footer-list">
+                <li>Segunda - Domingo: <span class="hours-highlight">8:00am - 22:00pm</span></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Divider -->
@@ -59,6 +53,6 @@ $assetBase = $assetBase ?? '../assets';
 
     <!-- Copyright -->
     <div class="footer-copyright">
-        <p>© Copyright - <span class="highlight">Predileto</span> 2024 | Desenhado por <span class="highlight">Gabriel Menezes</span></p>
+        <p>© Copyright - <span class="highlight">Predileto</span> 2024 | Desenvolvido por <a href="https://www.linkedin.com/in/gabrielmenezesdasilva" class="highlight" target="_blank">Gabriel Menezes</a></p>
     </div>
 </footer>

@@ -25,7 +25,7 @@ header{
 }
 
 .menu-header .menu-label {
-  font-size: 10px;
+  font-size: 25px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -35,6 +35,8 @@ header{
   border-top: 1px solid #FFB703;
   border-bottom: 1px solid #FFB703;
 }
+
+
 
 .menu-header h2 {
   font-size: 36px;

@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
 <?php
-$assetBase = '../assets';
-$rootPath  = '..';
+// Carrega configurações centralizadas
+require __DIR__ . '/../../config.php';
 ?>
 <head>
   <meta charset="UTF-8" />
@@ -21,17 +21,12 @@ $rootPath  = '..';
   <?php include __DIR__ . "/../components/header.php" ?>
 
   <main class="mainReserva">
-    <section class="reserva-hero">
-      <div class="reserva-hero-title">
-        <h1>Reserve o assento agora aqui facilmente</h1>
-      </div>
-    </section>
 
     <section class="reserva-container">
       <div class="reserva-content">
         <!-- Imagem à esquerda -->
         <div class="reserva-image">
-          <img src="<?= $assetBase ?>/images/gallery/reserved.jpg" alt="Mesa reservada com ambiente acolhedor" />
+          <img src="<?= $assetBase ?>/images/logoMenu/reservas.png" alt="Mesa reservada com ambiente acolhedor" />
         </div>
 
         <!-- Formulário à direita -->
@@ -42,7 +37,7 @@ $rootPath  = '..';
             As pessoas, a comida e a localização prioriegiada fazem do Predileto o lugar perfeito para bons amigos e família se reunirem e se divertirem.
           </p>
 
-          <form id="reservationForm" class="reserva-form" action="https://formspree.io/f/xlgdjead" method="POST">
+          <form id="reservationForm" class="reserva-form" action="https://formspree.io/f/xjgkabka" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <input 

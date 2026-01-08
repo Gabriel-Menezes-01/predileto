@@ -2,14 +2,7 @@
    RESPONSIVE MOBILE-FIRST CSS
    ========================================================= */
 
-:root {
-    --breakpoint-xs: 360px;
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 640px;
-    --breakpoint-lg: 768px;
-    --breakpoint-xl: 1024px;
-    --breakpoint-xxl: 1440px;
-}
+@import url("./tokens.css");
 
 /* =========================================================
    MOBILE FIRST - BASE STYLES
@@ -586,5 +579,119 @@ main {
     ::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.3);
         border-radius: 3px;
+    }
+}
+/* =========================================================
+   PÁGINA DE RESERVA - RESPONSIVO
+   ========================================================= */
+
+/* Mobile extra pequeno (até 360px) */
+@media (max-width: 360px) {
+    .reserva-hero-title h1 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+    }
+
+    .reserva-container {
+        padding: 0 8px !important;
+    }
+
+    .reserva-form-wrapper {
+        padding: 16px 12px !important;
+    }
+
+    .reserva-label {
+        font-size: 10px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .reserva-form-wrapper h2 {
+        font-size: 19px !important;
+    }
+
+    .reserva-description {
+        font-size: 13px !important;
+    }
+}
+
+/* Mobile pequeno (361px - 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+    .reserva-hero {
+        padding: 20px 16px !important;
+    }
+
+    .reserva-hero-title h1 {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
+
+    .reserva-container {
+        padding: 0 12px !important;
+    }
+
+    .reserva-image {
+        height: 220px !important;
+    }
+
+    .reserva-form-wrapper {
+        padding: 24px 16px !important;
+    }
+}
+
+/* Mobile médio (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+    .reserva-hero-title h1 {
+        font-size: 26px !important;
+    }
+
+    .reserva-image {
+        height: 240px !important;
+    }
+
+    .reserva-form-wrapper {
+        padding: 28px 20px !important;
+    }
+}
+
+/* Tablet pequeno (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+    .reserva-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    .reserva-image {
+        height: 260px !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+    }
+}
+
+/* Tablet médio (769px - 968px) */
+@media (min-width: 769px) and (max-width: 968px) {
+    .reserva-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    .reserva-image {
+        height: 320px !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* Desktop pequeno (969px+) */
+@media (min-width: 969px) {
+    .reserva-content {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .reserva-image {
+        height: 100% !important;
+        min-height: 450px !important;
     }
 }

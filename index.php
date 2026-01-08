@@ -1,6 +1,8 @@
 <?php
-// Renderiza o site a partir da raiz, apontando assets para /public
-$assetBase = 'public/assets';
-$rootPath  = 'public';
-
+/**
+ * Arquivo raiz que inclui a página inicial
+ * Carrega configurações centralizadas de paths
+ */
+require __DIR__ . '/config.php';
 require __DIR__ . '/public/inicio.php';
+?>

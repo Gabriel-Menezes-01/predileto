@@ -1,7 +1,7 @@
 <?php
 session_start();
-$assetBase = $assetBase ?? './assets';
-$rootPath  = $rootPath  ?? '.';
+// Carrega configurações centralizadas
+require __DIR__ . '/../config.php';
 ?>
 <!doctype html>
 <html lang="pt-BR">
@@ -11,6 +11,7 @@ $rootPath  = $rootPath  ?? '.';
     <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
     <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
     <link rel="stylesheet" href="<?= $assetBase ?>/css/inicio.css">
+    <link rel="stylesheet" href="<?= $assetBase ?>/css/cardapio.css">
     <link rel="stylesheet" href="<?= $assetBase ?>/css/phone.css">
     <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
     <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
@@ -30,7 +31,7 @@ $rootPath  = $rootPath  ?? '.';
                     <span class="highlight">Predileto</span>
                 </h1>
                 <p class="hero-subtitle">Uma experiência gastronômica inesquecível</p>
-                <a href="./pages/cardapio.php" class="hero-btn">Ver Menu</a>
+                <a href="<?= $rootPath ?>/pages/cardapio.php" class="hero-btn">Ver Menu</a>
             </div>
             <div class="hero-image">
                 <div class="hero-image-wrapper">
@@ -109,85 +110,12 @@ $rootPath  = $rootPath  ?? '.';
             <p class="section-description">Descubra nossos pratos autorais, feitos com ingredientes frescos e técnicas contemporâneas. Cada prato é preparado com cuidado para oferecer uma experiência gastronômica memorável.</p>
         </div>
         
-        <div class="dishes-grid">
-            <div class="dish-card">
-                <div class="dish-image">
-                    <img src="images/gallery/arrozdepato.jpg" alt="Prato 1">
-                </div>
-                <div class="dish-content">
-                    <div class="dish-header">
-                        <h3 class="dish-name">Lorem Epsum</h3>
-                        <span class="dish-price">$13</span>
-                    </div>
-                    <div class="dish-footer">
-                        <div class="dish-rating">
-                            <span class="rating-score">5.0</span>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-                        <button class="order-btn">Order Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <div class="dish-image">
-                    <img src="<?= $assetBase ?>/images/gallery/salmao.jpg" alt="Prato 2">
-                </div>
-                <div class="dish-content">
-                    <div class="dish-header">
-                        <h3 class="dish-name">Lorem Epsum</h3>
-                        <span class="dish-price">$13</span>
-                    </div>
-                    <div class="dish-footer">
-                        <div class="dish-rating">
-                            <span class="rating-score">5.0</span>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-                        <button class="order-btn">Order Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <div class="dish-image">
-                    <img src="<?= $assetBase ?>/images/gallery/picanha.jpg" alt="Prato 3">
-                </div>
-                <div class="dish-content">
-                    <div class="dish-header">
-                        <h3 class="dish-name">Lorem Epsum</h3>
-                        <span class="dish-price">$13</span>
-                    </div>
-                    <div class="dish-footer">
-                        <div class="dish-rating">
-                            <span class="rating-score">5.0</span>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                        </div>
-                        <button class="order-btn">Order Now</button>
-                    </div>
-                </div>
-            </div>
+        <div class="dishes-grid" id="popularDishesGrid">
+            <!-- Pratos carregados dinamicamente -->
         </div>
 
         <div class="section-action">
-            <a href="./pages/todos-os-pratos.php" class="view-all-btn">Veja todos os pratos</a>
+            <a href="<?= $rootPath ?>/pages/todos-os-pratos.php" class="view-all-btn">Veja todos os pratos</a>
         </div>
     </section>
 
@@ -211,7 +139,7 @@ $rootPath  = $rootPath  ?? '.';
                 <span class="reservation-label">RESERVA</span>
                 <h2 class="reservation-title">Reserve já a sua mesa!</h2>
                 
-                <form class="reservation-form" id="reservationForm" action="https://formspree.io/f/xlgdjead" method="POST">
+                <form class="reservation-form" id="reservationForm" method="POST">
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Name" required class="form-input form-input-full">
                     </div>
@@ -248,7 +176,7 @@ $rootPath  = $rootPath  ?? '.';
             </div>
             <h2>Sua reserva está confirmada!</h2>
             <p>Obrigado por nos escolher e esperamos recebê-lo em breve.</p>
-            <a href="./index.php" class="modal-btn">Volta o Início</a>
+            <a href="<?= $rootPath ?>/inicio.php" class="modal-btn">Volta o Início</a>
         </div>
     </div>
 </main>
@@ -258,11 +186,47 @@ $rootPath  = $rootPath  ?? '.';
         <!-- Elfsight Google Reviews Platform -->
         <script src="https://elfsightcdn.com/platform.js" async></script>
 
+        <script>
+            // Passa a configuração do PHP para o JavaScript
+            window.ASSET_BASE_PATH = '<?= $assetBase ?>';
+        </script>
+        <script src="<?= $assetBase ?>/js/cardapio-data.js"></script>
         <script defer src="<?= $assetBase ?>/js/alerts.js"></script>
         <script defer src="<?= $assetBase ?>/js/phone-country.js"></script>
         <script defer src="<?= $assetBase ?>/js/header.js"></script>
         <script defer src="<?= $assetBase ?>/js/hero.js"></script>
         <script defer src="<?= $assetBase ?>/js/reservation.js"></script>
         <script defer src="<?= $assetBase ?>/js/footer.js"></script>
+        
+        <script>
+        // Carregar os 3 primeiros pratos do cardápio
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('popularDishesGrid');
+            const primeiros3Pratos = pratos.carne.slice(0, 3);
+            
+            primeiros3Pratos.forEach(prato => {
+                const dishCard = `
+                    <div class="card-prato">
+                        <div class="imagem-prato" data-nome="${prato.nome}">
+                            <img src="${prato.imagem}" alt="${prato.nome}">
+                        </div>
+                        <div class="info-prato">
+                            <h3>${prato.nome}</h3>
+                            <p class="descricao">${prato.descricao}</p>
+                            <div class="preco-rating">
+                                <span class="preco">${formatarPreco(prato.preco)}</span>
+                            </div>
+                            <div class="rating-btn">
+                                <div class="rating">
+                                    ${gerarEstrelas(prato.rating)}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += dishCard;
+            });
+        });
+        </script>
 </body>
 </html>

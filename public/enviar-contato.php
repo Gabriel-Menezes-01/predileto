@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     file_put_contents($logFile, $mensagemLog, FILE_APPEND);
     
     // Preparar email usando Formspree
-    $formspreeEndpoint = 'https://formspree.io/f/xlgdjead';
+    $formspreeEndpoint = 'https://formspree.io/f/xjgkabka';
     
     $mensagemCompleta = "📧 NOVA MENSAGEM DE CONTATO\n\n";
     $mensagemCompleta .= "👤 Nome: $nome\n";

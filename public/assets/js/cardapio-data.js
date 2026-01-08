@@ -1,171 +1,161 @@
+// Detecta o caminho correto para assets baseado na URL da página
+// Se a variável foi definida no HTML (do PHP), usa ela. Caso contrário, detecta automaticamente.
+let assetBasePath;
+
+if (typeof window.ASSET_BASE_PATH !== 'undefined') {
+    // Usa a variável global definida no HTML pelo PHP
+    assetBasePath = window.ASSET_BASE_PATH;
+} else {
+    // Fallback: detecta baseado na URL
+    const isLocalhost = window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1');
+    
+    if (isLocalhost) {
+        // Em localhost
+        assetBasePath = window.location.pathname.includes('/pages/') ? '../assets' : './assets';
+    } else {
+        // Em produção: detecta se está em /public/pages/ ou /pages/
+        if (window.location.pathname.includes('/public/pages/')) {
+            assetBasePath = '../assets';
+        } else if (window.location.pathname.includes('/pages/')) {
+            assetBasePath = '../assets';
+        } else {
+            // Na raiz (/inicio.php ou /index.php)
+            assetBasePath = './assets';
+        }
+    }
+}
+
 // Dados dos pratos por categoria
 const pratos = {
   carne: [
     {
       id: 1,
-      nome: "Picanha Grelhada",
-      preco: 45.00,
+      nome: "Picanha",
+      preco: 11.50,
       rating: 5,
       categoria: "carne",
-      imagem: "../images/dishes/carne1.jpg",
-      descricao: "Suculenta picanha grelhada na brasa"
+      imagem: `${assetBasePath}/images/imgCardapio/picanha.jpg`,
+      descricao: "Picanha suculenta e macia"
     },
     {
       id: 2,
-      nome: "Costela Barbecue",
-      preco: 48.00,
+      nome: "Bitoque de Vaca",
+      preco: 9.50,
       rating: 5,
       categoria: "carne",
-      imagem: "../images/dishes/carne2.jpg",
-      descricao: "Costela macia ao molho barbecue"
+      imagem: `${assetBasePath}/images/imgCardapio/bitoqueCarne.jpeg`,
+      descricao: "Bife de vaca suculento"
     },
     {
       id: 3,
-      nome: "Espetim de Carne",
-      preco: 38.00,
+      nome: "Bitoque de Frango",
+      preco: 9.50,
       rating: 5,
       categoria: "carne",
-      imagem: "../images/dishes/carne3.jpg",
-      descricao: "Espetim grelhado com tempero especial"
+      imagem: `${assetBasePath}/images/imgCardapio/bitoqueFrango.png`,
+      descricao: "Peito de frango suculento"
     },
     {
       id: 4,
-      nome: "Bife Ancho",
-      preco: 52.00,
+      nome: "Bife Vazia",
+      preco: 11.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../images/dishes/carne4.jpg",
-      descricao: "Bife ancho maturado e grelhado"
+      imagem: `${assetBasePath}/images/imgCardapio/bifeVazia.png`,
+      descricao: "Bife vazio suculento"
     },
     {
       id: 5,
-      nome: "Alcatra Grelhada",
-      preco: 42.00,
+      nome: "Maminha",
+      preco: 9.50,
       rating: 5,
       categoria: "carne",
-      imagem: "../images/dishes/carne5.jpg",
-      descricao: "Alcatra suculenta grelhada"
+      imagem: `${assetBasePath}/images/imgCardapio/picanha.jpg`,
+      descricao: "Maminha suculenta e macia"
     },
     {
       id: 6,
-      nome: "Carne Seca na Brasa",
-      preco: 35.00,
+      nome: "Chapa Mista 2 Pessoas",
+      preco: 20.00,
       rating: 5,
       categoria: "carne",
-      imagem: "../images/dishes/carne6.jpg",
-      descricao: "Carne seca grelhada com manteiga de alho"
+      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCarne.jpg`,
+      descricao: "Chapa com variedade de carnes para 2 pessoas"
     }
   ],
-  frango: [
+  massa: [
     {
       id: 7,
-      nome: "Frango Grelhado",
-      preco: 28.00,
+      nome: "Massa de Carne",
+      preco: 7.90,
       rating: 5,
-      categoria: "frango",
-      imagem: "../images/dishes/frango1.jpg",
-      descricao: "Frango grelhado macio e temperado"
+      categoria: "massa",
+      imagem: `${assetBasePath}/images/imgCardapio/bitoqueFrango.png`,
+      descricao: "Espaguete à bolonhesa tradicional"
     },
     {
       id: 8,
-      nome: "Asas de Frango Barbecue",
-      preco: 25.00,
+      nome: "Massa de Camarão",
+      preco: 8.00,
       rating: 5,
-      categoria: "frango",
-      imagem: "../images/dishes/frango2.jpg",
-      descricao: "Asas crocantes ao molho barbecue"
+      categoria: "massa",
+      imagem: `${assetBasePath}/images/imgCardapio/picanha.jpg`,
+      descricao: "Fettuccine com molho de camarão"
     },
     {
       id: 9,
-      nome: "Peito de Frango Recheado",
-      preco: 32.00,
+      nome: "Massa de Frango",
+      preco: 8.50,
       rating: 5,
-      categoria: "frango",
-      imagem: "../images/dishes/frango3.jpg",
-      descricao: "Peito recheado com queijo e bacon"
-    },
+      categoria: "massa",
+      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCarne.jpg`,
+      descricao: "Penne ao molho branco com frango"
+    }],
+      peixe: [
     {
       id: 10,
-      nome: "Frango com Limão Siciliano",
-      preco: 30.00,
+      nome: "Salmão Grelhado",
+      preco: 12.00,
       rating: 5,
-      categoria: "frango",
-      imagem: "../images/dishes/frango4.jpg",
-      descricao: "Frango grelhado com molho de limão"
+      categoria: "peixe",
+      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      descricao: "Salmão fresco grelhado com ervas"
     },
     {
       id: 11,
-      nome: "Coxa e Sobrecoxa Grelhada",
-      preco: 22.00,
+      nome: "Dourada",
+      preco: 11.00,
       rating: 5,
-      categoria: "frango",
-      imagem: "../images/dishes/frango5.jpg",
-      descricao: "Coxa e sobrecoxa suculentas"
+      categoria: "peixe",
+      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      descricao: "Dourada grelhada com limão"
     },
     {
       id: 12,
-      nome: "Frango à Parmegiana",
-      preco: 35.00,
-      rating: 5,
-      categoria: "frango",
-      imagem: "../images/dishes/frango6.jpg",
-      descricao: "Frango à milanesa com queijo derretido"
-    }
-  ],
-  peixe: [
-    {
-      id: 13,
-      nome: "Salmão Grelhado",
-      preco: 55.00,
+      nome: "Robalo",
+      preco: 11.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../images/dishes/peixe1.jpg",
-      descricao: "Salmão fresco grelhado na brasa"
-    },
-    {
-      id: 14,
-      nome: "Filé de Tilápia",
-      preco: 32.00,
-      rating: 5,
-      categoria: "peixe",
-      imagem: "../images/dishes/peixe2.jpg",
-      descricao: "Filé de tilápia crocante"
-    },
-    {
-      id: 15,
-      nome: "Polvo à Lagareiro",
-      preco: 48.00,
-      rating: 5,
-      categoria: "peixe",
-      imagem: "../images/dishes/peixe3.jpg",
-      descricao: "Polvo macio com batata-doce"
-    },
-    {
-      id: 16,
-      nome: "Moqueca de Peixe",
-      preco: 38.00,
-      rating: 5,
-      categoria: "peixe",
-      imagem: "../images/dishes/peixe4.jpg",
-      descricao: "Moqueca baiana tradicional"
-    },
-    {
-      id: 17,
-      nome: "Robalo Grelhado",
-      preco: 52.00,
-      rating: 5,
-      categoria: "peixe",
-      imagem: "../images/dishes/peixe5.jpg",
+      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
       descricao: "Robalo fresco ao sal"
     },
     {
-      id: 18,
-      nome: "Camarão na Manteiga",
-      preco: 45.00,
+      id: 13,
+      nome: "Filetes de Peixe",
+      preco: 10.00,
       rating: 5,
       categoria: "peixe",
-      imagem: "../images/dishes/peixe6.jpg",
-      descricao: "Camarão fresco na manteiga de alho"
+      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      descricao: "Filetes de peixe empanados e fritos"
+    },
+    {
+      id: 14,
+      nome: "Bacalhau à Brás",
+      preco: 12.00,
+      rating: 5,
+      categoria: "peixe",
+      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCamarao.jpg`,
+      descricao: "Bacalhau desfiado com batata palha e ovos"
     }
   ]
 };
@@ -181,9 +171,9 @@ function gerarEstrelas(rating) {
 
 // Função para formatar preço
 function formatarPreco(preco) {
-  return new Intl.NumberFormat('pt-BR', {
+  return new Intl.NumberFormat('pt-PT', {
     style: 'currency',
-    currency: 'BRL'
+    currency: 'EUR'
   }).format(preco);
 }
 
@@ -191,7 +181,7 @@ function formatarPreco(preco) {
 function criarCardPrato(prato) {
   return `
     <div class="card-prato">
-      <div class="imagem-prato">
+      <div class="imagem-prato" data-nome="${prato.nome}">
         <img src="${prato.imagem}" alt="${prato.nome}">
       </div>
       <div class="info-prato">
@@ -204,7 +194,6 @@ function criarCardPrato(prato) {
           <div class="rating">
             ${gerarEstrelas(prato.rating)}
           </div>
-          <button class="btn-order">Pedir Agora</button>
         </div>
       </div>
     </div>

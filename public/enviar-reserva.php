@@ -37,22 +37,9 @@ if (!file_exists($arquivo)) {
 }
 file_put_contents($arquivo, $mensagemLog, FILE_APPEND);
 
-// 2. ENVIAR EMAIL via FormSubmit (sem precisar de configuração)
+// 2. ENVIAR EMAIL via Formspree (confiável em qualquer hospedagem)
 $emailEnviado = false;
 
-$mensagemEmail = "
-Nome: $nome
-Email do Cliente: $email
-Telefone: $telefone
-Pessoas: $pessoas
-Data da Reserva: $dataFormatada
-Horário: $horario
-";
-
-// Usar Formspree (necessário: configurar uma vez em formspree.io)
-$formspreeEndpoint = 'https://formspree.io/f/xlgdjead';
-
-// Preparar dados para envio ao Formspree
 $mensagemCompleta = "🍽️ NOVA RESERVA - RESTAURANTE PREDILETO\n\n";
 $mensagemCompleta .= "👤 Nome: $nome\n";
 $mensagemCompleta .= "📧 Email: $email\n";
@@ -60,11 +47,15 @@ $mensagemCompleta .= "📱 Telefone: $telefone\n";
 $mensagemCompleta .= "👥 Pessoas: $pessoas\n";
 $mensagemCompleta .= "📅 Data: $dataFormatada\n";
 $mensagemCompleta .= "🕐 Horário: $horario\n\n";
-$mensagemCompleta .= "Responda este cliente pelo email: $email";
+$mensagemCompleta .= "---\n";
+$mensagemCompleta .= "Responder para: $email\n";
+$mensagemCompleta .= "Restaurante Predileto - Praceta vale paraíso, 2765-053 Estoril\n";
+$mensagemCompleta .= "Tel: +351 926 233 942";
 
-// Tenta enviar para Formspree usando cURL (mais confiável)
-$emailEnviado = false;
+// Formspree endpoint (configure em https://formspree.io)
+$formspreeEndpoint = 'https://formspree.io/f/xjgkabka';
 
+// Preparar dados para envio
 $postData = [
     'name' => $nome,
     'email' => $email,
@@ -77,7 +68,7 @@ $postData = [
     '_subject' => 'Nova Reserva - ' . $nome . ' - ' . $dataFormatada
 ];
 
-// Tentar com cURL (método mais confiável)
+// Tentar com cURL (melhor opção - mais confiável)
 if (function_exists('curl_init')) {
     $ch = curl_init($formspreeEndpoint);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -88,6 +79,7 @@ if (function_exists('curl_init')) {
         'Accept: application/json'
     ]);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Importante em alguns servidores
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -96,14 +88,18 @@ if (function_exists('curl_init')) {
     $emailEnviado = ($httpCode >= 200 && $httpCode < 300);
 }
 
-// Se cURL não estiver disponível, tentar com file_get_contents
-if (!$emailEnviado) {
+// Fallback: tentar com stream (se cURL não disponível)
+if (!$emailEnviado && !function_exists('curl_init')) {
     $context = stream_context_create([
         'http' => [
             'method'  => 'POST',
             'header'  => "Content-type: application/x-www-form-urlencoded\r\nAccept: application/json\r\n",
             'content' => http_build_query($postData),
             'timeout' => 10
+        ],
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false
         ]
     ]);
     
@@ -111,11 +107,15 @@ if (!$emailEnviado) {
     $emailEnviado = ($response !== false);
 }
 
-// Responder sucesso
+// Responder com informações úteis
 echo json_encode([
     'success' => true,
-    'message' => 'Reserva confirmada e salva!',
+    'message' => 'Reserva confirmada com sucesso!',
     'emailSent' => $emailEnviado,
-    'info' => $emailEnviado ? 'Email enviado com sucesso!' : 'Reserva salva. Verifique o arquivo reservas.txt'
+    'info' => $emailEnviado ? 'Email enviado com sucesso!' : 'Reserva salva no sistema',
+    'debug' => [
+        'arquivoSalvo' => file_exists($arquivo),
+        'curlDisponivel' => function_exists('curl_init')
+    ]
 ]);
 ?>

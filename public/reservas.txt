@@ -1,36 +1,34 @@
-=== RESERVAS DO RESTAURANTE PREDILETO ===
+=== RESERVAS - PREDILETO ===
 
 
+=== RESERVA - 03/01/2026 18:19:00 ===
+Nome: cdcd | Email: dcdcdc@gmail.com | Tel: +351 987654321
+Data: 15/01/2026 | Hora: 12:00 | Pessoas: 12
 
-=== NOVA RESERVA - 01/01/2026 22:15:48 ===
-Nome: dfcdcdc
-Email: dcdcdcd@gmail.com
-Telefone: +351 987654321
-Número de Pessoas: 5
-Data: 21/01/2026
-Horário: 12:00
+=== RESERVA - 03/01/2026 18:20:12 ===
+Nome: sdcsdcsvs | Email: vsdvsdcsadvc@gmail.com | Tel: +351 987654321
+Data: 14/01/2026 | Hora: 19:21 | Pessoas: 10
 
+=== RESERVA - 03/01/2026 18:22:11 ===
+Nome: xscxs | Email: sxsxsxs@gmail.com | Tel: +351 852255552
+Data: 28/01/2026 | Hora: 21:22 | Pessoas: 5
 
-=== NOVA RESERVA - 01/01/2026 22:18:57 ===
-Nome: ga
-Email: jja@gmail.com
-Telefone: +351 987654321
-Número de Pessoas: 5
-Data: 21/01/2026
-Horário: 12:00
+=== RESERVA - 04/01/2026 00:27:26 ===
+Nome: teste | Email: teste@gmail.com | Tel: +351 987456321
+Data: 20/01/2026 | Hora: 12:00 | Pessoas: 5
 
-=== RESERVA - 01/01/2026 22:49:09 ===
-Nome: bfg | Email: bfgbgb@gmail.com | Tel: +351 999999999
-Data: 21/01/2026 | Hora: 14:41 | Pessoas: 5
+=== RESERVA - 04/01/2026 00:28:17 ===
+Nome: teste | Email: teste@gmail.com | Tel: +351 987456321
+Data: 20/01/2026 | Hora: 12:00 | Pessoas: 5
 
-=== RESERVA - 01/01/2026 22:53:33 ===
-Nome: verv | Email: fvrevre@gmail.com | Tel: +351 984445445
-Data: 15/01/2026 | Hora: 12:00 | Pessoas: 5
+=== RESERVA - 04/01/2026 00:32:03 ===
+Nome: gabriel | Email: gabriel@gmail.com | Tel: +351 987654321
+Data: 21/01/2026 | Hora: 12:00 | Pessoas: 5
 
-=== RESERVA - 01/01/2026 23:02:17 ===
-Nome: vfv | Email: fvfvfv@gmail.com | Tel: +351 555222111
-Data: 10/01/2026 | Hora: 12:00 | Pessoas: 9
+=== RESERVA - 04/01/2026 00:43:55 ===
+Nome: oi | Email: oi@gmail.com | Tel: +351 963963963
+Data: 21/01/2026 | Hora: 12:00 | Pessoas: 5
 
-=== RESERVA - 01/01/2026 23:03:11 ===
-Nome: gabriel | Email: menezes@gmail.com | Tel: +351 654213258
-Data: 06/06/2026 | Hora: 12:00 | Pessoas: 5
+=== RESERVA - 05/01/2026 12:44:28 ===
+Nome: 555 | Email: gabri@gmail.com | Tel: +351 955500132
+Data: 12/01/2026 | Hora: 12:00 | Pessoas: 5

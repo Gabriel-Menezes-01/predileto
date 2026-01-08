@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     carneContainer.innerHTML += criarCardPrato(prato);
   });
 
-  // Carregar pratos de frango (primeiros 3)
-  const frangoContainer = document.getElementById("frangoContainer");
-  const primeirosFrangos = pratos.frango.slice(0, 3);
-  primeirosFrangos.forEach(prato => {
-    frangoContainer.innerHTML += criarCardPrato(prato);
+  // Carregar pratos de massa (primeiros 3)
+  const massaContainer = document.getElementById("massaContainer");
+  const primeirosMassas = pratos.massa.slice(0, 3);
+  primeirosMassas.forEach(prato => {
+    massaContainer.innerHTML += criarCardPrato(prato);
   });
 
   // Carregar pratos de peixe (primeiros 3)
@@ -20,13 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const primeirosPeixes = pratos.peixe.slice(0, 3);
   primeirosPeixes.forEach(prato => {
     peixeContainer.innerHTML += criarCardPrato(prato);
-  });
-
-  // Adicionar eventos aos botões "Pedir Agora"
-  document.querySelectorAll(".btn-order").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      alert("Prato adicionado ao pedido!");
-      // Aqui você pode adicionar lógica de carrinho se desejar
-    });
   });
 });

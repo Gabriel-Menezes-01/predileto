@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
 <?php
-$assetBase = '../assets';
-$rootPath  = '..';
+// Carrega configurações centralizadas
+require __DIR__ . '/../../config.php';
 ?>
 <head>
   <meta charset="UTF-8" />
@@ -27,8 +27,8 @@ $rootPath  = '..';
         <div class="sobre-hero-text">
           <span class="section-badge">SOBRE NÓS</span>
           <h1>Qualidade e Tradição</h1>
-          <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content gfsheré making look like readable English. Many desktop publishing packages.</p>
-          <a class="btn-primary" href="#galeria">Veja mais</a>
+          <p>O Predileto é um restaurante tradicional de cozinha portuguesa, instalado em Estoril, que combina a autenticidade dos pratos clássicos portugueses com ingredientes frescos e de qualidade superior. Com uma equipe de chefs experientes e dedicados, oferecemos uma experiência gastronômica que honra as raízes da culinária portuguesa, trazendo à sua mesa os sabores que definem a identidade de Portugal.</p>
+          <a class="btn-primary" href="galeria-completa.php">Veja mais</a>
         </div>
         <div class="sobre-hero-media">
           <div class="decor-circle"></div>
@@ -45,26 +45,26 @@ $rootPath  = '..';
         <article class="feature-card">
           <div class="feature-icon">🍲</div>
           <h3>Produto fresco</h3>
-          <p>Profissionais consideram todos problemas pequenos nichos amigáveis.</p>
-          <a class="feature-link" href="#">See more</a>
+          <p>Utilizamos apenas ingredientes de primeira qualidade, selecionados diariamente para garantir a frescura e o melhor sabor em cada prato.</p>
+          <a class="feature-link" href="#">Ver Mais</a>
         </article>
         <article class="feature-card">
           <div class="feature-icon">👨‍🍳</div>
           <h3>Chefs habilidosos</h3>
-          <p>Profissionais consideram todos problemas pequenos nichos amigáveis.</p>
-          <a class="feature-link" href="#">See more</a>
+          <p>Nossa equipe de chefs experientes trabalha com paixão para criar pratos autênticos que refletem a verdadeira essência da gastronomia portuguesa.</p>
+          <a class="feature-link" href="#">Ver Mais</a>
         </article>
         <article class="feature-card">
           <div class="feature-icon">🍹</div>
           <h3>Bebidas e Sucos</h3>
-          <p>Profissionais consideram todos problemas pequenos nichos amigáveis.</p>
-          <a class="feature-link" href="#">See more</a>
+          <p>Oferecemos uma seleção cuidada de bebidas e sucos frescos para acompanhar perfeitamente cada refeição e proporcionar a melhor experiência.</p>
+          <a class="feature-link" href="#">Ver Mais</a>
         </article>
         <article class="feature-card">
           <div class="feature-icon">🥗</div>
           <h3>Pratos para todos</h3>
-          <p>Profissionais consideram todos problemas pequenos nichos amigáveis.</p>
-          <a class="feature-link" href="#">See more</a>
+          <p>Contamos com um cardápio diversificado que atende todos os paladares, desde os tradicionais pratos portugueses até opções especiais e requintadas.</p>
+          <a class="feature-link" href="#">Ver Mais</a>
         </article>
       </div>
     </section>

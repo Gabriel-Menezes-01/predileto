@@ -38,7 +38,7 @@ header {
 header .conteinerHeader{
     max-width: var(--container);
     width: 100%;
-    height: auto;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,10 +53,17 @@ header .logoImg{
     font-weight: bold;
     text-decoration: none;
 }
+
+header .logoImg a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
 header .logoImg img{
     width: 80px;
     height: 80px;
-
 }
 /* Desktop nav */
 .nav-desktop {

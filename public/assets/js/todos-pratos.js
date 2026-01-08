@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Combinar todos os pratos
     let pratosFiltrados = [];
     if (filtroAtivo === "todos") {
-      pratosFiltrados = [...pratos.carne, ...pratos.frango, ...pratos.peixe];
+      pratosFiltrados = [...pratos.carne, ...pratos.massa, ...pratos.peixe];
     } else {
       pratosFiltrados = pratos[filtroAtivo] || [];
     }
@@ -35,13 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         todosCardsContainer.innerHTML += criarCardPrato(prato);
       });
     }
-
-    // Adicionar eventos aos botões
-    document.querySelectorAll(".btn-order").forEach(btn => {
-      btn.addEventListener("click", () => {
-        alert("Prato adicionado ao pedido!");
-      });
-    });
   }
 
   // Event listeners dos filtros

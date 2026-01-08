@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <?php
-$assetBase = '../assets';
-$rootPath  = '..';
+// Carrega configurações centralizadas
+require __DIR__ . '/../../config.php';
 ?>
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@ $rootPath  = '..';
             </div>
 
             <div class="contato-grid">
-                <form class="contato-form" id="contatoForm" novalidate>
+                <form class="contato-form" id="contatoForm" novalidate action="https://formspree.io/f/xjgkabka" method="POST">
                     <div class="form-row">
                         <div class="form-field">
                             <label for="nome">Nome</label>

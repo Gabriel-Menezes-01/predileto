@@ -13,7 +13,7 @@ header{
 }
 
 .menu-section {
-    max-width: var(--container);
+    width: var(--full-width);
     margin: 0 auto 60px;
     padding: 40px 20px;
 }
@@ -27,8 +27,8 @@ header{
     margin-bottom: 50px;
 }
 
-.menu-header .menu-label {
-    font-size: 10px;
+ .menu-label {
+    font-size: 25px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -45,7 +45,7 @@ header{
 .menu-header .menu-label h1 {
     margin: 0;
     font-size: inherit;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .menu-header h2 {
@@ -65,10 +65,11 @@ header{
 
 /* Cards Container */
 .cards-container {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .card-prato {
@@ -92,6 +93,7 @@ header{
     height: 220px;
     overflow: hidden;
     background: #f0f0f0;
+    position: relative;
 }
 
 .imagem-prato img {
@@ -99,6 +101,17 @@ header{
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+}
+
+
+
+/* Imagem de carne mais fina */
+.imgPrato img {
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
 }
 
 .card-prato:hover .imagem-prato img {
@@ -115,7 +128,7 @@ header{
 .info-prato h3 {
     font-size: 18px;
     font-weight: 600;
-    color: var(--text);
+    color: var(--bg);
     margin-bottom: 8px;
 }
 
@@ -237,7 +250,7 @@ header{
     border: none;
     font-size: 16px;
     background: white;
-    color: var(--text);
+    color: var(--bg);
 }
 
 .search-box input::placeholder {

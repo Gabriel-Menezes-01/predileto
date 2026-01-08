@@ -8,9 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const showError = (message) => {
     if (typeof window.showAppModal === 'function') {
+      // Mensagem mais curta para mobile
+      const isMobile = window.innerWidth <= 640;
+      const displayMessage = isMobile && message.length > 80 ? 
+        message.substring(0, 77) + '...' : message;
+      
       window.showAppModal({
         title: 'Atenção',
-        message,
+        message: displayMessage,
         variant: 'error',
         primaryLabel: 'Entendi'
       });
@@ -32,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (time) {
         const [hours, minutes] = time.split(':').map(Number);
         if (hours < 12 || (hours >= 24)) {
-          showError('O restaurante funciona das 12h às 23h30');
+          showError('Horário de funcionamento: 12h às 23h30');
           e.target.value = '';
         } else if (hours === 23 && minutes > 30) {
-          showError('O restaurante funciona até as 23h30');
+          showError('Última reserva: 23h30');
           e.target.value = '';
         }
       }
@@ -48,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pessoasInput.addEventListener('change', (e) => {
       const valor = parseInt(e.target.value);
       if (valor > 20) {
-        showError('Máximo de 20 pessoas. Para grupos maiores, entre em contato conosco.');
+        showError('Máximo: 20 pessoas. Para grupos maiores, entre em contato.');
         e.target.value = '20';
       }
     });
@@ -155,9 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
         reservationForm.reset();
         
         if (typeof window.showAppModal === 'function') {
+          // Mensagem adaptada para mobile
+          const isMobile = window.innerWidth <= 640;
+          const detalhes = isMobile ? 
+            `📅 ${new Date(data.data).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })}\n⏰ ${data.horario} | 👥 ${data.pessoas}` :
+            `📅 ${new Date(data.data).toLocaleDateString('pt-BR')}  ⏰ ${data.horario}  👥 ${data.pessoas} pessoas`;
+          
           window.showAppModal({
-            title: 'Sua reserva está confirmada!',
-            message: `Obrigado por nos escolher.\n\n📅 ${new Date(data.data).toLocaleDateString('pt-BR')}  ⏰ ${data.horario}  👥 ${data.pessoas} pessoas`,
+            title: 'Reserva confirmada!',
+            message: `Obrigado por nos escolher.\n\n${detalhes}`,
             variant: 'success',
             primaryLabel: 'Voltar ao início',
             redirectUrl,

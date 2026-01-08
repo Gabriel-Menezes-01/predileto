@@ -1,14 +1,17 @@
 <?php
-// Usa variáveis fornecidas pela página para manter caminhos relativos consistentes
-$assetBase = $assetBase ?? '../assets';
-$rootPath  = $rootPath  ?? '..';
+// Carrega configurações centralizadas se não estiverem já definidas
+if (!isset($assetBase)) {
+    require __DIR__ . '/../../config.php';
+}
 ?>
 
 
 <header class="site-header">
     <div class="conteinerHeader">
         <div class="logoImg">
-            <img src="<?= $assetBase ?>/images/logo/LogoPredileto.svg" alt="Logo Predileto apresentando o nome da marca em uma fonte moderna, contra um fundo limpo, transmitindo uma sensação de qualidade e elegância.">
+            <a href="<?= $rootPath ?>/inicio.php">
+                <img src="<?= $assetBase ?>/images/logo/LogoPredileto.svg" alt="Logo Predileto apresentando o nome da marca em uma fonte moderna, contra um fundo limpo, transmitindo uma sensação de qualidade e elegância.">
+            </a>
         </div>
 
         <!-- Desktop nav -->

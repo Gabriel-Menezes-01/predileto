@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message: 'Obrigado pelo contato. Responderemos em breve.',
         variant: 'success',
         primaryLabel: 'Voltar ao início',
-        redirectUrl: '../index.php',
+        redirectUrl: './contato.php',
         autoCloseMs: 3000
       });
     }
@@ -25,9 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const showError = (message) => {
     if (typeof window.showAppModal === 'function') {
+      // Mensagem mais curta para mobile
+      const isMobile = window.innerWidth <= 640;
+      const displayMessage = isMobile && message.length > 80 ? 
+        message.substring(0, 77) + '...' : message;
+      
       window.showAppModal({
         title: 'Atenção',
-        message,
+        message: displayMessage,
         variant: 'error',
         primaryLabel: 'Entendi'
       });
