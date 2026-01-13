@@ -7,13 +7,18 @@ require __DIR__ . '/../../config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" type="image/svg+xml" href="<?= $assetBase ?>/images/logo/LogoPredileto.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="<?= $assetBase ?>/images/logo/logoPredileto.png">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/header.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/alerts.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/phone.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/contato.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/phone.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/contato.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/responsive.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Contato - Predileto</title>
 </head>
@@ -89,9 +94,10 @@ require __DIR__ . '/../../config.php';
 
     <?php include __DIR__ . "/../components/footer.php" ?>
 
-    <script src="<?= $assetBase ?>/js/alerts.js"></script>
-    <script src="<?= $assetBase ?>/js/phone-country.js"></script>
-    <script src="<?= $assetBase ?>/js/contato.js"></script>
-    <script src="<?= $assetBase ?>/js/header.js"></script>
+    <script src="<?= getAssetUrl('js/cache-control.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/alerts.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/phone-country.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/contato.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/header.js') ?>"></script>
 </body>
 </html>

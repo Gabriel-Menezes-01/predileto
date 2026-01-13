@@ -34,7 +34,7 @@ const pratos = {
       preco: 11.50,
       rating: 5,
       categoria: "carne",
-      imagem: `${assetBasePath}/images/imgCardapio/picanha.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/picanha.png`,
       descricao: "Picanha suculenta e macia"
     },
     {
@@ -57,7 +57,7 @@ const pratos = {
     },
     {
       id: 4,
-      nome: "Bife Vazia",
+      nome: "Bife da Vazia",
       preco: 11.00,
       rating: 5,
       categoria: "carne",
@@ -70,7 +70,7 @@ const pratos = {
       preco: 9.50,
       rating: 5,
       categoria: "carne",
-      imagem: `${assetBasePath}/images/imgCardapio/picanha.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/maninha.png`,
       descricao: "Maminha suculenta e macia"
     },
     {
@@ -79,83 +79,158 @@ const pratos = {
       preco: 20.00,
       rating: 5,
       categoria: "carne",
-      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCarne.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/grelhadaMista.png`,
       descricao: "Chapa com variedade de carnes para 2 pessoas"
+    },
+    {
+      id: 7,
+      nome: "Prego",
+      preco: 4.80,
+      rating: 5,
+      categoria: "carne",
+      imagem: `${assetBasePath}/images/imgCardapio/prego.png`,
+      descricao: "Prego no pão tradicional português"
+    },
+    {
+      id: 8,
+      nome: "Bifanas",
+      preco: 3.80,
+      rating: 5,
+      categoria: "carne",
+      imagem: `${assetBasePath}/images/imgCardapio/bifanas.png`,
+      descricao: "Bifanas de porco marinadas"
+    },
+    {
+      id: 9,
+      nome: "Peito de Frango Grelhado",
+      preco: 9.00,
+      rating: 5,
+      categoria: "carne",
+      imagem: `${assetBasePath}/images/imgCardapio/peitoDeFrango.png`,
+      descricao: "Peito de frango grelhado temperado"
+    },
+    {
+      id: 10,
+      nome: "Bitoque Infantil",
+      preco: 6.50,
+      rating: 5,
+      categoria: "carne",
+      imagem: `${assetBasePath}/images/imgCardapio/BitoqueInfantil-Vaca.png`,
+      descricao: "Bitoque especial para crianças"
     }
   ],
   massa: [
     {
-      id: 7,
+      id: 11,
       nome: "Massa de Carne",
       preco: 7.90,
       rating: 5,
       categoria: "massa",
-      imagem: `${assetBasePath}/images/imgCardapio/bitoqueFrango.png`,
+      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCarne.jpg`,
       descricao: "Espaguete à bolonhesa tradicional"
     },
     {
-      id: 8,
+      id: 12,
       nome: "Massa de Camarão",
       preco: 8.00,
       rating: 5,
       categoria: "massa",
-      imagem: `${assetBasePath}/images/imgCardapio/picanha.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/massaDeCamarao.png`,
       descricao: "Fettuccine com molho de camarão"
     },
     {
-      id: 9,
+      id: 13,
       nome: "Massa de Frango",
       preco: 8.50,
       rating: 5,
       categoria: "massa",
-      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCarne.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/massaDeFrango.png`,
       descricao: "Penne ao molho branco com frango"
-    }],
-      peixe: [
+    },
     {
-      id: 10,
+      id: 14,
+      nome: "Estrogonofe de Camarão",
+      preco: 10.50,
+      rating: 5,
+      categoria: "massa",
+      imagem: `${assetBasePath}/images/imgCardapio/estogonofeDeCamarao.jpeg`,
+      descricao: "Estrogonofe cremoso de camarão"
+    }
+  ],
+  peixe: [
+    {
+      id: 15,
       nome: "Salmão Grelhado",
       preco: 12.00,
       rating: 5,
       categoria: "peixe",
-      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/salmao.png`,
       descricao: "Salmão fresco grelhado com ervas"
     },
     {
-      id: 11,
+      id: 16,
       nome: "Dourada",
       preco: 11.00,
       rating: 5,
       categoria: "peixe",
-      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/dourada.png`,
       descricao: "Dourada grelhada com limão"
     },
     {
-      id: 12,
+      id: 17,
       nome: "Robalo",
       preco: 11.00,
       rating: 5,
       categoria: "peixe",
-      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/robalo.png`,
       descricao: "Robalo fresco ao sal"
     },
     {
-      id: 13,
+      id: 18,
       nome: "Filetes de Peixe",
       preco: 10.00,
       rating: 5,
       categoria: "peixe",
-      imagem: `${assetBasePath}/images/imgCardapio/salmao.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/filetesDePeixe.png`,
       descricao: "Filetes de peixe empanados e fritos"
     },
     {
-      id: 14,
+      id: 19,
       nome: "Bacalhau à Brás",
       preco: 12.00,
       rating: 5,
       categoria: "peixe",
-      imagem: `${assetBasePath}/images/imgCardapio/MassaDeCamarao.jpg`,
+      imagem: `${assetBasePath}/images/imgCardapio/bacalhauABras.png`,
       descricao: "Bacalhau desfiado com batata palha e ovos"
+    }
+  ],
+  saladas: [
+    {
+      id: 20,
+      nome: "Salada de Atum",
+      preco: 6.50,
+      rating: 5,
+      categoria: "saladas",
+      imagem: `${assetBasePath}/images/imgCardapio/saladaDeAtum.png`,
+      descricao: "Salada fresca com atum e legumes"
+    },
+    {
+      id: 21,
+      nome: "Salada de Camarão",
+      preco: 8.50,
+      rating: 5,
+      categoria: "saladas",
+      imagem: `${assetBasePath}/images/imgCardapio/saladaDeCamarao.png`,
+      descricao: "Salada tropical com camarões grelhados"
+    },
+    {
+      id: 22,
+      nome: "Salada de Frango",
+      preco: 7.00,
+      rating: 5,
+      categoria: "saladas",
+      imagem: `${assetBasePath}/images/imgCardapio/saladaDeFrango.png`,
+      descricao: "Salada caesar com frango grelhado"
     }
   ]
 };

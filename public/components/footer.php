@@ -37,10 +37,10 @@ if (!isset($assetBase)) {
             </div>
         </div>
 
-        <!-- Horas de Trabalho -->
+        <!-- Horas de Funcionamento -->
         <div class="footer-section footer-hours-section">
             <div class="footer-hours-header">
-                <h4 class="footer-section-title">HORAS DE TRABALHO</h4>
+                <h4 class="footer-section-title">HORARIO DE FUNCIONAMENTO</h4>
             </div>
             <ul class="footer-list">
                 <li>Segunda - Domingo: <span class="hours-highlight">8:00am - 22:00pm</span></li>

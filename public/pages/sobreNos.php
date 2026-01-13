@@ -7,11 +7,16 @@ require __DIR__ . '/../../config.php';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
-  <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
-  <link rel="stylesheet" href="<?= $assetBase ?>/css/sobreNos.css">
-  <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
-  <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="<?= $assetBase ?>/images/logo/LogoPredileto.svg">
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="<?= $assetBase ?>/images/logo/logoPredileto.png">
+  <link rel="stylesheet" href="<?= getAssetUrl('css/header.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('css/footer.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('css/sobreNos.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('css/alerts.css') ?>">
+  <link rel="stylesheet" href="<?= getAssetUrl('css/responsive.css') ?>">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <title>Predileto - Sobre Nós</title>
 </head>
@@ -102,8 +107,9 @@ require __DIR__ . '/../../config.php';
 
   <?php include __DIR__ . "/../components/footer.php" ?>
 
-  <script defer src="<?= $assetBase ?>/js/galeria-lightbox.js"></script>
-  <script defer src="<?= $assetBase ?>/js/header.js"></script>
-  <script defer src="<?= $assetBase ?>/js/footer.js"></script>
+  <script src="<?= getAssetUrl('js/cache-control.js') ?>"></script>
+  <script defer src="<?= getAssetUrl('js/galeria-lightbox.js') ?>"></script>
+  <script defer src="<?= getAssetUrl('js/header.js') ?>"></script>
+  <script defer src="<?= getAssetUrl('js/footer.js') ?>"></script>
 </body>
 </html>

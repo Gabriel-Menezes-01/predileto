@@ -7,11 +7,16 @@ require __DIR__ . '/../../config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/header.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/footer.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/cardapio.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/alerts.css">
-    <link rel="stylesheet" href="<?= $assetBase ?>/css/responsive.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" type="image/svg+xml" href="<?= $assetBase ?>/images/logo/LogoPredileto.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="<?= $assetBase ?>/images/logo/logoPredileto.png">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/header.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/cardapio.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/alerts.css') ?>">
+    <link rel="stylesheet" href="<?= getAssetUrl('css/responsive.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Cardápio - Predileto</title>
 </head>
@@ -75,8 +80,9 @@ require __DIR__ . '/../../config.php';
         // Passa a configuração do PHP para o JavaScript
         window.ASSET_BASE_PATH = '<?= $assetBase ?>';
     </script>
-    <script src="<?= $assetBase ?>/js/cardapio-data.js"></script>
-    <script src="<?= $assetBase ?>/js/cardapio.js"></script>
-    <script src="<?= $assetBase ?>/js/header.js"></script>
+    <script src="<?= getAssetUrl('js/cache-control.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/cardapio-data.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/cardapio.js') ?>"></script>
+    <script src="<?= getAssetUrl('js/header.js') ?>"></script>
 </body>
 </html>

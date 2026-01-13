@@ -227,6 +227,13 @@ header .logoImg img {
 .form-row-multiple {
     flex-direction: column !important;
     gap: 10px !important;
+    display: flex !important;
+}
+
+.form-row-multiple .form-input,
+.form-row-multiple input {
+    width: 100% !important;
+    flex: 1 1 100% !important;
 }
 
 .form-input,
@@ -418,6 +425,13 @@ main {
 
     .form-row-multiple {
         flex-direction: row !important;
+        gap: 12px !important;
+    }
+
+    .form-row-multiple .form-input,
+    .form-row-multiple input {
+        flex: 1 1 auto !important;
+        width: auto !important;
     }
 
     .form-input,
